@@ -19,7 +19,7 @@ function SingUp() {
     
     let [token, setToken] = useAuth()
     
-    if(token == 'bor' && pathname === '/SingUp'){
+    if(token == 'bor' && pathname === '/'){
         setToken('otish mumkin')
     }
 
@@ -58,14 +58,14 @@ function SingUp() {
         <img className="form__logo" src={TwitterLogo} alt="img" />
         <h1 className="form__title">Create an account</h1>
         <input ref={inputtel} placeholder="Phone Number" className="form__inputtel" type="tel" pattern="^(?:\d{10,12}|\+\d{10,12}|\w+@\w+\.\w{2,4})$"/>
-        <NavLink ref={emaillink} className="form__link2" to="/SingUp" onClick={(e) => {
+        <NavLink ref={emaillink} className="form__link2" to="/" onClick={(e) => {
             inputtel.current.setAttribute('placeholder', 'E-mail')
             inputtel.current.setAttribute('type', 'email')
             inputtel.current.setAttribute('pattern', '^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$')
             e.target.style.display = 'none';
             tellink.current.style.display = 'block';
         }}>Use email</NavLink>
-        <NavLink ref={tellink} className="form__tellink2" to="/SingUp" onClick={(e) => {
+        <NavLink ref={tellink} className="form__tellink2" to="/" onClick={(e) => {
             inputtel.current.setAttribute('placeholder', 'Phone Number')
             inputtel.current.setAttribute('type', 'tel')
             inputtel.current.setAttribute('pattern', '^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$')
